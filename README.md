@@ -1,5 +1,5 @@
 # Proyecto Data Warehouse :rocket:
-Proyecto Data Warehouse para carrera Full Stack Web Developer de Acamica.
+Proyecto Data Warehouse para carrera Full Stack Web Developer de Acamica. You can also find a live version here https://data-warehouse-tadakuma.netlify.app/
 
 ## Description
 The Data Warehouse in this project has been designed for a marketing company to store and manage
