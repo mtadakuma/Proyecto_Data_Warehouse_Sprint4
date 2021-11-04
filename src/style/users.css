@@ -1,0 +1,209 @@
+main{
+    margin-top: 100px;
+}
+
+#users-table{
+    margin: auto;
+    width: 95vw;
+}
+
+table{
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #cccccc;
+}
+
+td,th{
+    text-align: left;
+}
+
+td{
+    font-size: 0.9rem;
+    padding: 15px 20px;
+}
+
+
+th{
+    font-size:0.7rem;
+    padding:20px;
+    font-weight: normal;
+    border-bottom: 1px solid #37bb0e6c;
+}
+
+tr:hover{
+    background-color: #E8E8E8;
+}
+
+
+.tableDiv{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.edit-user{
+    cursor:pointer;
+    font-size: 20px;
+    margin-right: 25px;
+    color:rgba(22, 105, 212, 0.863);
+}
+
+.edit-user:hover{
+    color:rgb(0, 188, 245);
+}
+
+
+.remove-user{
+    cursor:pointer;
+    font-size: 20px;
+    color:rgba(204, 10, 10, 0.863);
+}
+
+.remove-user:hover{
+    color:rgba(255, 2, 2, 0.863);
+}
+
+
+#add-user{
+    display:flex;
+    flex-direction:row;
+    float:right;
+    cursor:pointer;
+    color:white;
+    padding: 10px 30px;
+    background-color: #1D72C2;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+#add-user:hover{
+    background-color: #0f88fa;
+}
+
+/*------------ End of users -----------*/
+/*------------ Pop Up -----------------*/
+#pop-up-user { /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+
+}
+
+
+.pop-up{
+    margin-top:25vh;
+    margin-left:auto;
+    margin-right:auto;
+    width: 90vw;
+    background: white;
+    display:flex;
+    flex-direction:column;
+    border: none;
+    border-radius: 8px;
+    padding: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#pop-up-title{
+    margin-bottom: 30px;
+}
+
+.primary-info{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.secondary-info{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.primary-info > div,
+.secondary-info > div
+{
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+}
+
+.secondary-info > div{
+    margin-right: 50px;
+}
+
+.btn-container > button {
+    margin-left: 20px;
+    width: 100px;
+}
+
+.btn-container{
+    display:flex;
+    justify-content:right;
+    margin-top: 20px;
+}
+
+
+.tableDiv > label{
+    font-size: 0.7rem;
+    color: grey
+}
+
+.tableDiv > input,
+.tableDiv > select{
+    height: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    border-bottom:1px solid #1D72C2;
+    font-size: 0.9rem;
+}
+
+.tableDiv > input:focus,
+.tableDiv > select:focus{
+    outline:none;
+}
+
+#submit-pop-up{
+    width: 200px;
+    cursor:pointer;
+    color:white;
+    padding: 15px 30px;
+    background-color: #056b30;
+    border-radius: 5px;
+    border: none;
+}
+#submit-pop-up:hover{
+    background-color: #09c256;
+}
+
+#cancel-pop-up{
+    width: 200px;
+    cursor:pointer;
+    color:white;
+    padding: 15px 30px;
+    background-color: #740404;
+    border-radius: 5px;
+    border: none;
+}
+#cancel-pop-up:hover{
+    background-color: #df1010;
+}
+
+/*---------- End of Pop Up -----------*/
+
+#users-tab{
+    font-weight: 700;
+}

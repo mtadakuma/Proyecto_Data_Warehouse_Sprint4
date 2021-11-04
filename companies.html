@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/companies.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- fontAwesome-->
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a href="./contacts.html"><img src="./src/img/Data.gif" alt="Logo" class="logo" id='logo'></a>
+        <nav>
+            <ul>
+                <li id='contacts-tab'><a href="./contacts.html">Contactos</a></li>
+                <li id='companies-tab'><a href="#">Compañías</a></li>
+                <li id='users-tab'><a href="./users.html">Usuarios</a></li>
+                <li id='region-tab'><a href="./regions.html">Región/Ciudad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='companies-table'>
+            <button id='add-company'>Agregar compañía</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th id='name'>Nombre</th>
+                        <th id='address'>Dirección</th>
+                        <th id='country'>País / Región</th>
+                        <th id='telephone'>Teléfono</th>
+                        <th id='actions'>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+
+                </tbody>
+            </table>
+        </section>
+        <section id='pop-up-company'>
+            <div class='pop-up'>
+                <h2 id='pop-up-title'>Compañia</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="input-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="input-address">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="input-email">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="telephone">Teléfono</label>
+                        <input type="text" name="telephone" id="input-telephone">
+                    </div>
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="regions">Región</label>
+                        <select name="regions" id="regions">
+                            <option value="" disabled selected>Seleccionar región</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="countries">País</label>
+                        <select name="countries" id="countries" disabled>
+                            <option value="" disabled selected>Seleccionar País</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="cities">Ciudad</label>
+                        <select name="cities" id="cities" disabled>
+                            <option value="" disabled selected>Seleccionar Ciudad</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class='btn-container'>
+                    <button type="submit" id='submit-pop-up'>Enviar</button>
+                    <button id='cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <script src="./src/js/scripts/companies.js"></script>
+</body>
+</html>

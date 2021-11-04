@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "name": "Sudamérica",
+        "countries": [
+            {
+                "id": 1,
+                "name": "Argentina",
+                "isActive": true,
+                "cities": [
+                    {
+                        "id": 1,
+                        "name": "Buenos Aires",
+                        "isActive": true
+                    },
+                    {
+                        "id": 2,
+                        "name": "Córdoba",
+                        "isActive": true
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Chile",
+                "isActive": true,
+                "cities": [
+                    {
+                        "id": 1,
+                        "name": "Santiago",
+                        "isActive": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Norteamérica",
+        "countries": [
+            {
+                "id": 3,
+                "name": "Estados Unidos",
+                "isActive": true,
+                "cities": [
+                    {
+                        "id": 3,
+                        "name": "California",
+                        "isActive": true
+                    }
+                ]
+            }
+        ]
+    }
+]

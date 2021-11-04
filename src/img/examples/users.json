@@ -1,0 +1,24 @@
+[
+    {
+        "id": 25,
+        "first_name": "miguel",
+        "last_name": "takadakuma",
+        "email": "admin@gmail.com",
+        "username": "admin",
+        "isAdmin": true,
+        "password": "pass123",
+        "createdAt": "2021-10-16T01:16:08.000Z",
+        "updatedAt": "2021-10-16T01:16:08.000Z"
+    },
+    {
+        "id": 27,
+        "first_name": "Jimena",
+        "last_name": "Lutiral",
+        "email": "jimchy@gmail.com",
+        "username": "jimy",
+        "isAdmin": false,
+        "password": "123",
+        "createdAt": "2021-11-03T01:46:50.000Z",
+        "updatedAt": "2021-11-03T01:46:50.000Z"
+    }
+]

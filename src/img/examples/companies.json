@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Accenture",
+        "address": "Bv. Colon 1234",
+        "email": "accenture@gmail.com",
+        "telephone": "9988776655",
+        "city": {
+            "id": 3,
+            "name": "California",
+            "isActive": true,
+            "country": {
+                "id": 3,
+                "name": "Estados Unidos",
+                "isActive": false,
+                "region": {
+                    "id": 2,
+                    "name": "Norteamérica"
+                }
+            }
+        }
+    },
+    {
+        "id": 2,
+        "name": "Globant",
+        "address": "Av. Colon 100",
+        "email": "globant@gmail.com",
+        "telephone": "1122334455",
+        "city": {
+            "id": 1,
+            "name": "Buenos Aires",
+            "isActive": true,
+            "country": {
+                "id": 1,
+                "name": "Argentina",
+                "isActive": false,
+                "region": {
+                    "id": 1,
+                    "name": "Sudamérica"
+                }
+            }
+        }
+    }
+]

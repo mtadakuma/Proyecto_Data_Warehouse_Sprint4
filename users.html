@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/users.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- fontAwesome-->
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a href="./contacts.html"><img src="./src/img/Data.gif" alt="Logo" class="logo" id='logo'></a>
+        <nav>
+            <ul>
+                <li id='contacts-tab'><a href="./contacts.html">Contactos</a></li>
+                <li id='companies-tab'><a href="./companies.html">Compañías</a></li>
+                <li id='users-tab'><a href="#">Usuarios</a></li>
+                <li id='region-tab'><a href="./regions.html">Región/Ciudad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='users-table'>
+            <button id='add-user'>Crear nuevo usuario</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th id='first_name'>Nombre</th>
+                        <th id='last_name'>Apellido</th>
+                        <th id='email'>Email</th>
+                        <th id='profile'>Perfil</th>
+                        <th id='username'>Username</th>
+                        <th id='actions'>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+                </tbody>
+            </table>
+        </section>
+        <section id='pop-up-user'>
+            <div class='pop-up'>
+                <h2 id='pop-up-title'>Usuario</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="input-first-name">Nombre</label>
+                        <input type="text" name="input-first-name" id="input-first-name">
+                    </div>
+                    
+                    <div class='tableDiv'> 
+                        <label for="input-last-name">Apellido</label>
+                        <input type="text" name="input-last-name" id="input-last-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-email">Email</label>
+                        <input type="email" name="input-email" id="input-email">
+                    </div>
+                    
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="input-profile">Perfil</label>
+                        <select id="input-profile" name="input-profile">
+                            <option value="0">Basico</option>
+                            <option value="1">Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-username">Username</label>
+                        <input type="input" autocomplete="off" name="input-username" id="input-username" required>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-password">Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-password" id="input-password"  required>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="input-confirm-password">Repetir Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-confirm-password" id="input-confirm-password"  required>
+                        <span id='message'></span>
+                    </div>
+                </div>
+
+                <div class='btn-container'>
+                    <button type="submit" id='submit-pop-up'>Enviar</button>
+                    <button id='cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+        <!-- <section id='create-user-sec'>
+            <h1 class="create-user">Crear usuario</h1>
+            <form action="" id='create-user-form' method="POST">
+                <div class="form-group-user">
+                    <label for="first_name">Nombre</label>
+                    <input type="text" autocomplete="off" name="first_name" id="first_name"  placeholder="Miguel" required>
+                </div>
+                <div class="form-group-user">
+                    <label for="last_name">Apellido</label>
+                    <input type="text" autocomplete="off" name="last_name" id="last_name"  placeholder="Tadakuma" required>
+                </div>
+                <div class="form-group-user">
+                  <label for="email">Email</label>
+                  <input type="email" autocomplete="off" name="email" id="email"  placeholder="email@example.com" required>
+                </div>
+                <div class="form-group-user">
+                    <label for="profile">Perfil</label>
+                    <select id="profile" name="profile">
+                        <option value="0">Basico</option>
+                        <option value="1">Admin</option>
+                    </select>
+                  </div>
+                <div class="form-group-user">
+                    <label for="username">Username</label>
+                    <input type="input" autocomplete="off" name="username" id="username"  placeholder="ingrese nombre de usuario" required>
+                </div>
+                <div class="form-group-user">
+                  <label for="password">Contraseña</label>
+                  <input type="password" autocomplete="off" name="password" id="password"  placeholder="ingrese contraseña" required>
+                </div>
+                <div class="form-group-user">
+                    <label for="confirm_password">Repetir Contraseña</label>
+                    <input type="password" autocomplete="off" name="confirm_password" id="confirm_password"  placeholder="ingrese contraseña" required>
+                    <span id='message'></span>
+                  </div>
+                <input name="create" id="create" class="btn btn-block login-btn" type="submit" value="Crear">
+              </form>
+          </section> -->
+
+    </main>
+    <script src="./src/js/scripts/users.js"></script>
+</body>
+</html>

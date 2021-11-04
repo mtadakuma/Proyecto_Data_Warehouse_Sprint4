@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/contacts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- fontAwesome-->
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a href="./contacts.html"><img src="./src/img/Data.gif" alt="Logo" class="logo" id='logo'></a>
+        <nav>
+            <ul>
+                <li id='contacts-tab'><a href="#">Contactos</a></li>
+                <li id='companies-tab'><a href="./companies.html">Compañías</a></li>
+                <li id='users-tab'><a href="./users.html">Usuarios</a></li>
+                <li id='region-tab'><a href="./regions.html">Región/Ciudad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='sec-search'></section>
+        <section id='contacts-table'>
+            <label for="search-input"></label>
+            <input type="text" id='search-bar' placeholder='Buscar contacto'>
+            <div class='btns-add-del'>
+                <button id='del-all-contacts'>Eliminar contactos</button>
+                <button id='add-contact'>Agregar contacto</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th id='check-all-boxes'><input type="checkbox" name="deleteAll" id="check-all-boxes"></th>
+                        <th id='contact'>Contacto</th>
+                        <th id='country'>País / Región</th>
+                        <th id='company'>Compañía</th>
+                        <th id='position'>Cargo</th>
+                        <th id='channels'>Canal preferido</th>
+                        <th id='interest'>Interés</th>
+                        <th id='actions'>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+
+                </tbody>
+            </table>
+        </section>
+
+        <section id='pop-up-contact'>
+            <div class='pop-up'>
+                <h2 id='pop-up-title'>Nuevo Contacto</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="first-name">Nombre</label>
+                        <input type="text" name="first-name" id="input-first-name" required>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="last-name">Apellido</label>
+                        <input type="text" name="last-name" id="input-last-name" required>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="position">Cargo</label>
+                        <input type="text" name="position" id="input-position" required>
+                    </div>
+
+                    <div class='tableDiv'>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="input-email">
+                    </div>
+
+                    <div class='tableDiv'>
+                        <label for="company">Compañía</label>
+                        <select name="company" id="select-company" required>
+                            <option value="" disabled selected>Seleccionar Compañía</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="regions">Región</label>
+                        <select name="regions" id="regions">
+                            <option value="" disabled selected>Seleccionar región</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="countries">País</label>
+                        <select name="countries" id="countries" disabled>
+                            <option value="" disabled selected>Seleccionar País</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="cities">Ciudad</label>
+                        <select name="cities" id="cities" disabled>
+                            <option value="" disabled selected>Seleccionar Ciudad</option>
+                        </select>
+                    </div>
+
+                    <div class='tableDiv'>
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="input-address">
+                    </div>
+
+                    <div class='tableDiv'>
+                        <label for="interest">Interés</label>
+                        <select name="interest" id="input-interest">
+                            <option value="0" selected>0%</option>
+                            <option value="25" >25%</option>
+                            <option value="50" >50%</option>
+                            <option value="75" >75%</option>
+                            <option value="100" >100%</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='tertiary-info' id='tertiary-info'>
+                    <div class='channel-info-row'>
+                        <div class='tableDiv'>
+                            <label for="channel">Canal de contacto</label>
+                            <select name="channel" class="input-channel">
+                            </select>
+                        </div>
+                        <div class='tableDiv'>
+                            <label for="account">Cuenta de usuario</label>
+                            <input type="text" name="account" class="input-account">
+                        </div>
+                        <div class='tableDiv'>
+                            <label for="preferences">Preferencias</label>
+                            <select name="preferences" class="input-preferences">
+                                <option value="Sin preferencia" selected>Sin preferencia</option>
+                                <option value="Canal favorito">Canal favorito</option>
+                                <option value="No molestar" >No molestar</option>
+                            </select>
+                        </div>
+                        <button id='btn-add-channel' disabled>Agregar Canal</button>
+                    </div>
+                </div>
+
+                <div class='btn-container'>
+                    <button type="submit" id='submit-pop-up'>Enviar</button>
+                    <button id='cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <script src='./src/js/scripts/contacts.js'></script>
+</body>
+</html>

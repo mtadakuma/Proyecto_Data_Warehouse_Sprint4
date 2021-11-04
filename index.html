@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="./src/img/Data.gif" alt="Logo" class="logo" id='logo'></a>
+    </header>
+    <main>
+      <section>
+        <h1 class="login-title">Bienvenido</h1>
+        <form action="" id='login-form' method="POST">
+            <div class="form-group">
+              <label for="user">Nombre de usuario o Email</label>
+              <input type="input" autocomplete="off" name="user" id="user" class="form-control" placeholder="example@gmail or username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" autocomplete="off" name="password" id="password" class="form-control" placeholder="ingrese contraseña" required>
+            </div>
+            <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Ingresar">
+          </form>
+      </section>
+        
+    </main>
+    <script src="./src/js/scripts/login.js"></script>
+</body>
+</html>

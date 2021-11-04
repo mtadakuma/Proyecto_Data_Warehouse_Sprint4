@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "firstName": "Miguel",
+        "lastName": "Tadakuma",
+        "position": "Full Stack Web Developer",
+        "email": "tadakuma@gmail.com",
+        "address": "Córdoba 2263",
+        "cities_id": 1,
+        "companies_id": 1,
+        "isActive": true,
+        "interest": 50,
+        "createdAt": "2021-10-27T20:46:27.000Z",
+        "updatedAt": "2021-10-27T20:46:27.000Z",
+        "city": {
+            "id": 1,
+            "name": "Buenos Aires",
+            "isActive": true,
+            "country": {
+                "id": 1,
+                "name": "Argentina",
+                "region": {
+                    "id": 1,
+                    "name": "Sudamérica"
+                }
+            }
+        },
+        "company": {
+            "id": 1,
+            "name": "Accenture"
+        },
+        "channels": [
+            {
+                "id": 1,
+                "name": "Whatsapp",
+                "contacts_has_channels": {
+                    "channel_id": 1,
+                    "contact_id": 1,
+                    "account": "1133550273",
+                    "preferences": "Sin preferencia",
+                    "contactId": 1,
+                    "channelId": 1
+                }
+            },
+            {
+                "id": 2,
+                "name": "Facebook",
+                "contacts_has_channels": {
+                    "channel_id": 2,
+                    "contact_id": 1,
+                    "account": "@Minchy",
+                    "preferences": "Sin preferencia",
+                    "contactId": 1,
+                    "channelId": 2
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "firstName": "Jimena",
+        "lastName": "Lutiral",
+        "position": "Tester QA",
+        "email": "jimchy@gmail.com",
+        "address": "Córdoba 2264",
+        "cities_id": 2,
+        "companies_id": 2,
+        "isActive": true,
+        "interest": 100,
+        "createdAt": "2021-10-27T20:46:27.000Z",
+        "updatedAt": "2021-10-27T20:46:27.000Z",
+        "city": {
+            "id": 2,
+            "name": "Córdoba",
+            "isActive": true,
+            "country": {
+                "id": 1,
+                "name": "Argentinapoiu",
+                "region": {
+                    "id": 1,
+                    "name": "Sudamérica"
+                }
+            }
+        },
+        "company": {
+            "id": 2,
+            "name": "Globant"
+        },
+        "channels": [
+            {
+                "id": 1,
+                "name": "Whatsapp",
+                "contacts_has_channels": {
+                    "channel_id": 1,
+                    "contact_id": 1,
+                    "account": "1133550274",
+                    "preferences": "Sin preferencia",
+                    "contactId": 1,
+                    "channelId": 1
+                }
+            },
+            {
+                "id": 2,
+                "name": "Facebook",
+                "contacts_has_channels": {
+                    "channel_id": 2,
+                    "contact_id": 1,
+                    "account": "@Jimchy",
+                    "preferences": "Sin preferencia",
+                    "contactId": 1,
+                    "channelId": 2
+                }
+            }
+        ]
+    }
+]

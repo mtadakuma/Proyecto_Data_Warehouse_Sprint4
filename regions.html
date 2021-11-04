@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/regions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- fontAwesome-->
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a href="./contacts.html"><img src="./src/img/Data.gif" alt="Logo" class="logo" id='logo'></a>
+        <nav>
+            <ul>
+                <li id='contacts-tab'><a href="./contacts.html">Contactos</a></li>
+                <li id='companies-tab'><a href="./companies.html">Compañías</a></li>
+                <li id='users-tab'><a href="./users.html">Usuarios</a></li>
+                <li id='region-tab'><a href="#">Región/Ciudad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='region-ciudad'>
+            <button class='add-reg btn'><i class="fas fa-plus-circle"></i> Agregar Región</button>
+            <div id='regiones'>
+                
+            </div> 
+        </section>
+        <section id='pop-up'>
+            <div class="pop-up-window">
+                <div class='pop-up-div'>
+                    <div class='pop-up-title-div'>
+                        <h2 id='title-name'></h2>
+                        <h2 id='title-name-value'></h2>
+                        <input type="text" name='name' id='title-input'></input>
+                    </div>
+                    <div class='pop-up-btns'>
+                        <button type='submit' class='submit' id='submit'>Enviar</button>
+                        <button class='cancel btn'>Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="./src/js/scripts/regions.js"></script>
+</body>
+</html>

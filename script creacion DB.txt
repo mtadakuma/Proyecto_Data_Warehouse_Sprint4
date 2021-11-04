@@ -1,0 +1,204 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema proyecto-data-warehouse
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema proyecto-data-warehouse
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `proyecto-data-warehouse` DEFAULT CHARACTER SET utf8 ;
+USE `proyecto-data-warehouse` ;
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`channels`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`channels` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`regions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`regions` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 25
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`countries`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`countries` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `isActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `region_id` INT(11) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  PRIMARY KEY (`id`, `region_id`),
+  INDEX `fk_countries_region_idx` (`region_id` ASC) ,
+  CONSTRAINT `fk_countries_region`
+    FOREIGN KEY (`region_id`)
+    REFERENCES `proyecto-data-warehouse`.`regions` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 22
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`cities`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`cities` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `isActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `countries_id` INT(11) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  PRIMARY KEY (`id`, `countries_id`),
+  INDEX `fk_cities_countries1_idx` (`countries_id` ASC) ,
+  CONSTRAINT `fk_cities_countries1`
+    FOREIGN KEY (`countries_id`)
+    REFERENCES `proyecto-data-warehouse`.`countries` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 25
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`companies`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`companies` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `address` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `telephone` VARCHAR(100) NOT NULL,
+  `isActive` TINYINT(4) NOT NULL DEFAULT 1,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `cities_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`, `cities_id`),
+  INDEX `fk_companies_cities1_idx` (`cities_id` ASC) ,
+  CONSTRAINT `fk_companies_cities1`
+    FOREIGN KEY (`cities_id`)
+    REFERENCES `proyecto-data-warehouse`.`cities` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 9
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`contacts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`contacts` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(100) NOT NULL,
+  `lastName` VARCHAR(100) NOT NULL,
+  `position` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `address` VARCHAR(100) NOT NULL,
+  `cities_id` INT(11) NOT NULL,
+  `companies_id` INT(11) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `isActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `interest` INT(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`, `cities_id`, `companies_id`),
+  INDEX `fk_contacts_cities_idx` (`cities_id` ASC) ,
+  INDEX `fk_contacts_companies1_idx` (`companies_id` ASC) ,
+  CONSTRAINT `fk_contacts_cities`
+    FOREIGN KEY (`cities_id`)
+    REFERENCES `proyecto-data-warehouse`.`cities` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_contacts_companies1`
+    FOREIGN KEY (`companies_id`)
+    REFERENCES `proyecto-data-warehouse`.`companies` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 17
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`contacts_has_channels`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`contacts_has_channels` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `contact_id` INT(11) NOT NULL,
+  `channel_id` INT(11) NOT NULL,
+  `account` VARCHAR(100) NOT NULL,
+  `preferences` VARCHAR(100) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `isActive` TINYINT(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`, `contact_id`, `channel_id`),
+  INDEX `fk_contacts_has_channels_channels1_idx` (`channel_id` ASC) ,
+  INDEX `fk_contacts_has_channels_contacts1_idx` (`contact_id` ASC) ,
+  CONSTRAINT `fk_contacts_has_channels_channels1`
+    FOREIGN KEY (`channel_id`)
+    REFERENCES `proyecto-data-warehouse`.`channels` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_contacts_has_channels_contacts1`
+    FOREIGN KEY (`contact_id`)
+    REFERENCES `proyecto-data-warehouse`.`contacts` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 23
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `proyecto-data-warehouse`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `proyecto-data-warehouse`.`users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(100) NOT NULL,
+  `last_name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `isAdmin` TINYINT(1) NOT NULL DEFAULT 0,
+  `password` VARCHAR(100) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+  `username` VARCHAR(100) NOT NULL,
+  `isActive` TINYINT(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
+ENGINE = InnoDB
+AUTO_INCREMENT = 41
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
